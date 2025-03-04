@@ -8,8 +8,8 @@ namespace jatek_oop
 {
 	internal class Felhasznalo
 	{
-		private string Nev {  get; set; }
-		private int Egyenleg { get; set; }
+		public string Nev {  get; private set; }
+		public int Egyenleg { get; private set; }
 		List<Jatek> Konyvtar = new List<Jatek>();
 
 		public Felhasznalo(string nev, int egyenleg)
