@@ -27,19 +27,21 @@ namespace jatek_oop
 					return false;
                 }
             }
-			Konyvtar.Add(jatek);
+            Console.WriteLine($"A(z) {jatek.Cim} sikeresen megvásárolva!");
+            Konyvtar.Add(jatek);
 			return true;
         }
 		public void KonyvtarMegtekintes()
 		{
+            Console.WriteLine("Megvásárolt játékok: ");
             foreach (var konyv in Konyvtar)
             {
-                Console.WriteLine($"Könyv neve:{konyv.Cim}\nKönyv kategóriája: {konyv.Kategoria}\nKönyv ára: {konyv.Ar}");
+                Console.WriteLine($"- {konyv.Cim}");
             }
         }
 		public void Feltoltes(int osszeg)
 		{
-            Console.WriteLine("Pénz sikeresen feltöltve a számlára.");
+            Console.WriteLine($"Egyenleg feltöltve: +{osszeg} Ft");
         }
 	}
 }

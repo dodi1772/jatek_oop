@@ -18,21 +18,25 @@ namespace jatek_oop
 		public void JatekHozzaadas(Jatek jatek)
 		{
 			jatekok.Add(jatek);
-		}
+            Console.WriteLine($"Játék sikeresen hozzáadva ({jatek.Cim}).");
+        }
 		public void FelhasznaloHozzaadas(Felhasznalo felhasznalo)
 		{
 			felhasznalok.Add(felhasznalo);
-		}
+            Console.WriteLine($"Felhasznaló sikeresen hozzáadva ({felhasznalo.Nev}).");
+        }
 		public Jatek KeresJatek(string cim)
 		{
             foreach (var jatek in jatekok)
             {
                 if (jatek.Cim==cim)
                 {
+                    Console.WriteLine("A keresett játék létezik.");
                     return jatek;
                 }
             }
-			return null;
+            Console.WriteLine("A keresett játék nem található.");
+            return null;
         }
 		public Felhasznalo KeresFelhasznalo(string nev)
 		{
@@ -40,10 +44,12 @@ namespace jatek_oop
 			{
 				if (felhasznalo.Nev == nev)
 				{
-					return felhasznalo;
+                    Console.WriteLine("A keresett felhasználó létezik.");
+                    return felhasznalo;
 				}
 			}
-			return null;
+            Console.WriteLine("A keresett felhasználó nem található.");
+            return null;
 		}
 	}
 }
